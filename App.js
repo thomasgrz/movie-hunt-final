@@ -1,12 +1,16 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-
+import expo;
+import { StyleSheet, Text, TextInput, View } from 'react-native';
+import { StackNavigator} from 'react-navigation'
 export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-      </View>
+        <TextInput 
+          style={{height: 40}}      
+          placeholder="this will be a search field"
+        />
+          </View>
     );
   }
 }
