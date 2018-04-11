@@ -1,19 +1,30 @@
 import React from 'react';
-import expo;
-import { StyleSheet, Text, TextInput, View } from 'react-native';
+import BasicApp from './screens/BasicApp'
+import DetailsApp from './screens/DetailsApp'
+import { Card, TouchableHighlight, StyleSheet, Button,Text, TextInput, View } from 'react-native';
 import { StackNavigator} from 'react-navigation'
-export default class App extends React.Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <TextInput 
-          style={{height: 40}}      
-          placeholder="this will be a search field"
-        />
-          </View>
-    );
+
+export default StackNavigator({
+  Home:{
+    screen: BasicApp,
+  },
+  Details:{
+    screen: DetailsApp
+  }
+},
+{
+  initialRouteName: 'Home',
+  navigationOptions:{
+    headerStyle:{
+      backgroundColor: '#f4511e',
+    },
+    headerTintColor: "#fff",
+    headerTitleStyle:{
+      fontWeight: 'bold',
+    }
   }
 }
+);
 
 const styles = StyleSheet.create({
   container: {
@@ -22,4 +33,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  text: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  }
 });
