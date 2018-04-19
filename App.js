@@ -1,15 +1,15 @@
 import React from 'react';
-import BasicApp from './screens/BasicApp'
-import DetailsApp from './screens/DetailsApp'
+import HomeScreen from './screens/HomeScreen'
+import Details from './screens/Details'
 import { Card, TouchableHighlight, StyleSheet, Button,Text, TextInput, View } from 'react-native';
 import { StackNavigator} from 'react-navigation'
 
 export default StackNavigator({
   Home:{
-    screen: BasicApp,
+    screen: HomeScreen,
   },
   Details:{
-    screen: DetailsApp
+    screen: Details
   }
 },
 {

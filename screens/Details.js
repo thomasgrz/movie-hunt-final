@@ -2,7 +2,7 @@ import React from 'react';
 import { Card, TouchableHighlight, StyleSheet, Button,Text, TextInput, View } from 'react-native';
 import { StackNavigator} from 'react-navigation'
 
-export default class DetailsApp extends React.Component{
+export default class Details extends React.Component{
    static navigationOptions = ({ navigation, navigationOptions })=>{
       const { params } = navigation.state;
 
