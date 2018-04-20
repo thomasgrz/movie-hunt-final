@@ -1,31 +1,25 @@
 import React from 'react';
-import { Card, TouchableHighlight, StyleSheet, Button,Text, TextInput, View } from 'react-native';
+import { Card, Image, TouchableHighlight, StyleSheet, Button,Text, TextInput, View } from 'react-native';
 import { StackNavigator} from 'react-navigation'
 
 export default class Details extends React.Component{
    static navigationOptions = ({ navigation, navigationOptions })=>{
       const { params } = navigation.state;
-
-      return {
-        title: params ? params.otherParam : "Nested Details Screen",
-        headerStyle: {
-          backgroundColor: navigationOptions.headerTintColor,
-        },
-        headerTintColor: navigationOptions.headerStyle.backgroundColor
+      return{
+        title: params ? params.movieTitle: "didnt work",
+        poster: params ? params.moviePoster: null
       }
    };
 
    render(){
      /* read params passed in from last screen*/
      const { params } = this.props.navigation.state
-     const itemId = params ? params.itemId : null;
+     const poster = params ? params.poster: null
      const otherParam = params ? params.otherParam : null;
 
      return(
         <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-          <Text>Details Screen</Text>
-          <Text>itemId: {JSON.stringify(itemId)}</Text>
-          <Text>otherParam:{JSON.stringify(otherParam)}</Text>
+          <Image style={{height: 300, width: 150}} source={{uri: `${poster}`}}/>
           <Button 
             title="Go to Details ... again"
             onPress={()=>this.props.navigation.navigate('Details')}

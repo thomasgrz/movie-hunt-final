@@ -1,7 +1,7 @@
 import React from 'react';
 import { ScrollView, Card, TouchableHighlight, StyleSheet, Image, Button, Text, TextInput, View } from 'react-native';
 import { StackNavigator } from 'react-navigation'
-import {DetailsButton} from '../detailsbutton'
+import DetailsButton from '../detailsbutton'
 //3374ac8f
 const Row = props => (
         <View style={{flex: 1, flexDirection: "row"}}>
@@ -9,7 +9,7 @@ const Row = props => (
           <View style={{alignItems: 'right'}}>
             <Text>Film: {props.title}</Text>
             <Text>Release: {props.year}</Text>
-            <DetailsButton />
+            <DetailsButton title={props.title} poster={props.image}/>
           </View>
         </View>
   
